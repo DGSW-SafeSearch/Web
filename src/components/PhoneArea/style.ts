@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Context = styled.p<{ isRight?: boolean }>`
-  font-size: 2rem;
+export const Context = styled.p<{ isRight?: boolean; isMoblie: boolean }>`
+  font-size: ${({ isMoblie }) => (isMoblie ? "1.5rem" : "2rem")};
   font-weight: 600;
   color: ${({ theme }) => theme.personal50};
   width: 100%;
-  line-height: 3rem;
+  line-height: ${({ isMoblie }) => (isMoblie ? "2rem" : "3rem")};
 
   ${({ isRight }) => isRight && `text-align:right;`}
 `;
@@ -39,7 +39,7 @@ export const MainWrap = styled.div<{ isMoblie: boolean }>`
 `;
 
 export const Introduce = styled.p<{ isMoblie: boolean }>`
-  font-size: ${({ isMoblie }) => (isMoblie ? "1.5rem" : "2rem")};
+  font-size: ${({ isMoblie }) => (isMoblie ? "1rem" : "2rem")};
   font-weight: 600;
   color: ${({ theme }) => theme.personal50};
   text-align: center;

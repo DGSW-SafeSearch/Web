@@ -11,7 +11,7 @@ const PhoneArea = () => {
     <div>
       <S.MainWrap isMoblie={!checkWidth()}>
         <S.PhoneWrap isMoblie={!checkWidth()}>
-          <S.Context>
+          <S.Context isMoblie={!checkWidth()}>
             CAS No.를
             <br />
             사진으로
@@ -22,7 +22,7 @@ const PhoneArea = () => {
         </S.PhoneWrap>
         <S.PhoneWrap isMoblie={!checkWidth()}>
           <Phone image={Info} />
-          <S.Context isRight>
+          <S.Context isMoblie={!checkWidth()} isRight>
             여러가지
             <br />
             화학물질정보를
