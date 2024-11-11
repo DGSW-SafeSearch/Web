@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import BusinessImg from "../../asset/Business.png";
 import DirectionImg from "../../asset/Direction.png";
 
 export const DirectionAnime = keyframes`
@@ -18,23 +17,23 @@ export const Background = styled.div`
   z-index: -3;
 `;
 
-export const MainWrap = styled.div`
+export const MainWrap = styled.div<{ isMoblie: boolean }>`
   width: 100%;
   height: 100vh;
   margin-bottom: 100px;
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ isMoblie }) => (isMoblie ? "center" : "space-between")};
   align-items: center;
 `;
-export const Logo = styled.img`
+export const Logo = styled.img<{ isMoblie: boolean }>`
   background-size: cover;
-  height: 62px;
+  height: ${({ isMoblie }) => (isMoblie ? "48px" : "62px")};
   margin-bottom: 1rem;
 `;
 
-export const Introduce = styled.p`
-  font-size: 2rem;
+export const Introduce = styled.p<{ isMoblie: boolean }>`
+  font-size: ${({ isMoblie }) => (isMoblie ? "1.25rem" : "2rem")};
   font-weight: 600;
   color: ${({ theme }) => theme.personal50};
   text-align: center;
@@ -61,10 +60,8 @@ export const InfoWrap = styled.div`
   flex-direction: column;
 `;
 
-export const Business = styled.div`
-  width: 410px;
-  height: 26px;
-  background-image: url(${BusinessImg});
+export const Business = styled.img<{ isMoblie: boolean }>`
+  height: ${({ isMoblie }) => (isMoblie ? "20px" : "26px")};
   background-size: cover;
 `;
 

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const MainForm = styled.div`
+export const MainForm = styled.div<{ isMoblie: boolean }>`
   cursor: pointer;
   padding: 0.75rem;
   border-radius: 1rem;
-  font-size: 1.75rem;
+  font-size: ${({ isMoblie }) => (isMoblie ? "1.5rem" : "1.75rem")};
   display: inline-block;
   background-color: ${({ theme }) => theme.black};
   color: ${({ theme }) => theme.white0};
@@ -17,9 +17,17 @@ export const SubForm = styled.div`
   align-items: center;
 `;
 
-export const ButtonImg = styled.div<{ image: string }>`
-  width: 2.5rem;
-  height: 2.5rem;
+export const ButtonImg = styled.div<{ isMoblie: boolean; image: string }>`
+  ${({ isMoblie }) =>
+    isMoblie
+      ? `
+    width: 2rem;
+    height: 2rem;
+    `
+      : `
+    width: 2.5rem;
+    height: 2.5rem;
+    `}
   margin-right: 1rem;
   background-image: url(${({ image }) => image});
   background-size: cover;

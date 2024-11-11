@@ -1,5 +1,6 @@
 import React from "react";
 import * as S from "./style";
+import useGetBrWidth from "../../../util/hooks/useGetBrWidth";
 
 interface IButtonProps {
   context: string;
@@ -8,10 +9,11 @@ interface IButtonProps {
 }
 
 const Button = ({ context, image, url }: IButtonProps) => {
+  const { checkWidth } = useGetBrWidth();
   return (
-    <S.MainForm onClick={() => window.open(url)}>
+    <S.MainForm onClick={() => window.open(url)} isMoblie={!checkWidth()}>
       <S.SubForm>
-        <S.ButtonImg image={image} />
+        <S.ButtonImg image={image} isMoblie={!checkWidth()} />
         <p>{context}</p>
       </S.SubForm>
     </S.MainForm>

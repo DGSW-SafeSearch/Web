@@ -6,16 +6,19 @@ import * as S from "./style";
 import Phone from "../common/Phone";
 import MainForm from "../../asset/MainForm.png";
 import LogoImg from "../../asset/Logo.png";
+import BusinessImg from "../../asset/Business.png";
+import useGetBrWidth from "../../util/hooks/useGetBrWidth";
 
 const MainInfo = () => {
+  const { checkWidth } = useGetBrWidth();
   return (
-    <S.MainWrap>
+    <S.MainWrap isMoblie={!checkWidth()}>
       <S.Background />
-      <Phone image={MainForm} margin="0 0 0 -150px" />
+      {checkWidth() && <Phone image={MainForm} margin="0 0 0 -150px" />}
       <S.InfoWrap>
         <S.LogoWrap>
-          <S.Logo src={LogoImg} />
-          <S.Introduce>
+          <S.Logo src={LogoImg} isMoblie={!checkWidth()} />
+          <S.Introduce isMoblie={!checkWidth()}>
             화학물질을 사용하는 업무를 하고 계신다면
             <br />꼭 필요한 카스넘버 검색
           </S.Introduce>
@@ -32,10 +35,10 @@ const MainInfo = () => {
             url="https://zrr.kr/Bxnh"
           />
         </S.BtnWrap>
-        <S.Business />
+        <S.Business src={BusinessImg} isMoblie={!checkWidth()} />
         <S.Direction />
       </S.InfoWrap>
-      <Phone image={MainForm} margin="0 -150px 0 0" />
+      {checkWidth() && <Phone image={MainForm} margin="0 -150px 0 0" />}
     </S.MainWrap>
   );
 };
