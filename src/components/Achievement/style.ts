@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Explane = styled.div<{ isMoblie: boolean }>`
-  width: 500px;
-  font-size: 1.5rem;
+  width: ${({ isMoblie }) => (isMoblie ? "100%" : "500px")};
+  font-size: ${({ isMoblie }) => (isMoblie ? "1rem" : "1.5rem")};
   color: ${({ theme }) => theme.personal50};
   text-align: center;
   ${({ isMoblie }) => isMoblie && `margin : 2rem 1rem;`}
@@ -27,18 +27,18 @@ export const Agreement = styled.img<{ isMoblie: boolean }>`
   background-size: cover;
 `;
 
-export const MainWrap = styled.div`
+export const MainWrap = styled.div<{ isMoblie: boolean }>`
   background-color: ${({ theme }) => theme.white10};
-  padding-top: 10rem;
-  padding-bottom: 20rem;
+  padding-top: ${({ isMoblie }) => (isMoblie ? "5rem" : "10rem")};
+  padding-bottom: ${({ isMoblie }) => (isMoblie ? "7rem" : "20rem")};
 `;
 
 export const Title = styled.div<{ isMoblie: boolean }>`
-  font-size: 2rem;
+  font-size: ${({ isMoblie }) => (isMoblie ? "1.75rem" : "2rem")};
   font-weight: 600;
   color: ${({ theme }) => theme.personal50};
 
   ${({ isMoblie }) => (isMoblie ? `text-align: center;` : `margin-left: 20%;`)}
 
-  margin-bottom: 7rem;
+  margin-bottom: ${({ isMoblie }) => (isMoblie ? "3rem" : "7rem")};
 `;

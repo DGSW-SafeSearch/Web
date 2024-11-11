@@ -7,7 +7,7 @@ import AgreementImg from "../../asset/Agreement.png";
 const Achievement = () => {
   const { checkWidth } = useGetBrWidth();
   return (
-    <S.MainWrap>
+    <S.MainWrap isMoblie={!checkWidth()}>
       <S.Title isMoblie={!checkWidth()}>이런걸 했어요</S.Title>
       <div>
         <S.ContentsWrap isMoblie={!checkWidth()}>
