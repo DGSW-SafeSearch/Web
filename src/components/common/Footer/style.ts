@@ -15,8 +15,11 @@ export const Logo = styled.img<{
   ${({ margin }) => `margin : ${margin}`}
 `;
 
+export const ContextWrap = styled.div<{ isMoblie: boolean }>`
+  font-size: ${({ isMoblie }) => (isMoblie ? "0.75rem" : "1rem")};
+`;
+
 export const Context = styled.p`
-  font-size: 1rem;
   letter-spacing: 0.05rem;
 
   display: flex;
@@ -32,8 +35,9 @@ export const PrivactPolicy = styled.p`
   }
 `;
 
-export const MainWrap = styled.div`
+export const MainWrap = styled.div<{ isMoblie: boolean }>`
   height: 100%;
   display: flex;
   align-items: center;
+  ${({ isMoblie }) => isMoblie && `justify-content:center;`}
 `;

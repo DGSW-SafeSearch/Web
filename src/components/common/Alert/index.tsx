@@ -1,15 +1,17 @@
 import React from "react";
 import * as S from "./style";
 import useAlert from "../../../util/hooks/useAlert";
-import { privacyPolicy } from "../../../util/constant/privacyPolicy";
+import useGetBrWidth from "../../../util/hooks/useGetBrWidth";
+// import { privacyPolicy } from "../../../util/constant/privacyPolicy";
 
 const Alert = () => {
+  const { checkWidth } = useGetBrWidth();
   const { setIsAlertActive } = useAlert();
   return (
     <S.MainWrap>
-      <S.Alert>
-        <S.Title>개인정보 처리방침</S.Title>
-        <S.Context>
+      <S.Alert isMoblie={!checkWidth()}>
+        <S.Title isMoblie={!checkWidth()}>개인정보 처리방침</S.Title>
+        <S.Context isMoblie={!checkWidth()}>
           개인정보처리방침 v1.0.0 <br />
           주식회사 영자닷컴(이하, "회사"라 함)은 세이프서치(이하, “서비스”라
           함)를 운영합니다. <br />
@@ -33,7 +35,12 @@ const Alert = () => {
           <br />
           <br />
         </S.Context>
-        <S.Button onClick={() => setIsAlertActive(false)}>확인</S.Button>
+        <S.Button
+          onClick={() => setIsAlertActive(false)}
+          isMoblie={!checkWidth()}
+        >
+          확인
+        </S.Button>
       </S.Alert>
     </S.MainWrap>
   );

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const Alert = styled.div`
-  width: 700px;
+export const Alert = styled.div<{ isMoblie: boolean }>`
+  width: ${({ isMoblie }) => (isMoblie ? "70%" : "700px")};
   padding: 1.5rem 2rem;
   box-sizing: border-box;
   text-align: center;
@@ -11,25 +11,25 @@ export const Alert = styled.div`
   border: 1px solid ${({ theme }) => theme.border10};
 `;
 
-export const Title = styled.p`
-  font-size: 2rem;
+export const Title = styled.p<{ isMoblie: boolean }>`
+  font-size: ${({ isMoblie }) => (isMoblie ? "1rem" : "2rem")};
   color: ${({ theme }) => theme.personal50};
   font-weight: 600;
 `;
 
-export const Context = styled.p`
+export const Context = styled.p<{ isMoblie: boolean }>`
   margin-top: 1rem;
-  font-size: 1.25rem;
+  font-size: ${({ isMoblie }) => (isMoblie ? "0.75rem" : "1.25rem")};
 
   color: ${({ theme }) => theme.personal50};
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ isMoblie: boolean }>`
   cursor: pointer;
   box-shadow: none;
   border: none;
   margin-top: 1rem;
-  font-size: 1.5rem;
+  font-size: ${({ isMoblie }) => (isMoblie ? "1rem" : "1.5rem")};
   border-radius: 1rem;
   padding: 0.75rem 3rem;
   color: ${({ theme }) => theme.white20};
