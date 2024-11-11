@@ -17,7 +17,7 @@ const Footer = () => {
           <S.Context>주식회사 영자닷컴 | 대표자 : 박영민</S.Context>
           <S.Context>
             주소 : 대구광역시 수성구 알파시티 1로 160 SW융합테크비즈센터 409{" "}
-            {checkWidth() ? "|" : <br />}
+            {checkWidth() ? `| ` : <br />}
             사업자 등록 번호 : 504-86-18651
           </S.Context>
           <S.Context>전화번호 : 053-474-3979 | 팩스 : 053-474-3979</S.Context>
