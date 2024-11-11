@@ -1,5 +1,4 @@
 import styled, { keyframes } from "styled-components";
-import LogoImg from "../../asset/Logo.png";
 import BusinessImg from "../../asset/Business.png";
 import DirectionImg from "../../asset/Direction.png";
 
@@ -28,10 +27,8 @@ export const MainWrap = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-export const Logo = styled.div`
-  background-image: url(${LogoImg});
+export const Logo = styled.img`
   background-size: cover;
-  width: 350px;
   height: 62px;
   margin-bottom: 1rem;
 `;

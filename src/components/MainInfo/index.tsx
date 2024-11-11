@@ -5,6 +5,7 @@ import AppStore from "../../asset/Apple.png";
 import * as S from "./style";
 import Phone from "../common/Phone";
 import MainForm from "../../asset/MainForm.png";
+import LogoImg from "../../asset/Logo.png";
 
 const MainInfo = () => {
   return (
@@ -13,7 +14,7 @@ const MainInfo = () => {
       <Phone image={MainForm} margin="0 0 0 -150px" />
       <S.InfoWrap>
         <S.LogoWrap>
-          <S.Logo />
+          <S.Logo src={LogoImg} />
           <S.Introduce>
             화학물질을 사용하는 업무를 하고 계신다면
             <br />꼭 필요한 카스넘버 검색

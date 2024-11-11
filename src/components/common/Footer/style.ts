@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import LogoImg from "../../../asset/Logo.png";
 
 export const Footer = styled.footer`
   background-color: ${({ theme }) => theme.white50};
@@ -7,14 +6,11 @@ export const Footer = styled.footer`
   height: 300px;
 `;
 
-export const Logo = styled.div<{
-  width: string;
+export const Logo = styled.img<{
   height: string;
   margin?: string;
 }>`
-  width: ${({ width }) => width};
   height: ${({ height }) => height};
-  background-image: url(${LogoImg});
   background-size: cover;
   ${({ margin }) => `margin : ${margin}`}
 `;
