@@ -1,29 +1,29 @@
 import styled from "styled-components";
-import AgreementImg from "../../asset/Agreement.png";
 
-export const Explane = styled.div`
+export const Explane = styled.div<{ isMoblie: boolean }>`
   width: 500px;
   font-size: 1.5rem;
   color: ${({ theme }) => theme.personal50};
   text-align: center;
+  ${({ isMoblie }) => isMoblie && `margin : 2rem 1rem;`}
 `;
 
-export const ContentsWrap = styled.div`
+export const ContentsWrap = styled.div<{ isMoblie: boolean }>`
   width: 60%;
   margin: auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: ${({ isMoblie }) => (isMoblie ? "center" : "space-between")};
   align-items: center;
+
+  ${({ isMoblie }) => isMoblie && `flex-direction : column;`}
 
   &:nth-child(2) {
     margin-top: 12rem;
   }
 `;
 
-export const Agreement = styled.div`
-  background-image: url(${AgreementImg});
-  width: 560px;
-  height: 315px;
+export const Agreement = styled.img<{ isMoblie: boolean }>`
+  width: ${({ isMoblie }) => (isMoblie ? "300px" : "560px")};
   background-size: cover;
 `;
 
@@ -33,10 +33,12 @@ export const MainWrap = styled.div`
   padding-bottom: 20rem;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ isMoblie: boolean }>`
   font-size: 2rem;
   font-weight: 600;
   color: ${({ theme }) => theme.personal50};
-  margin-left: 20%;
+
+  ${({ isMoblie }) => (isMoblie ? `text-align: center;` : `margin-left: 20%;`)}
+
   margin-bottom: 7rem;
 `;
