@@ -3,12 +3,14 @@ import Phone from "../common/Phone";
 import Info from "../../asset/Info.png";
 import Search from "../../asset/Search.png";
 import * as S from "./style";
+import useGetBrWidth from "../../util/hooks/useGetBrWidth";
 
 const PhoneArea = () => {
+  const { checkWidth } = useGetBrWidth();
   return (
     <div>
-      <S.MainWrap>
-        <S.PhoneWrap>
+      <S.MainWrap isMoblie={!checkWidth()}>
+        <S.PhoneWrap isMoblie={!checkWidth()}>
           <S.Context>
             CAS No.를
             <br />
@@ -18,7 +20,7 @@ const PhoneArea = () => {
           </S.Context>
           <Phone image={Search} />
         </S.PhoneWrap>
-        <S.PhoneWrap>
+        <S.PhoneWrap isMoblie={!checkWidth()}>
           <Phone image={Info} />
           <S.Context isRight>
             여러가지
@@ -29,7 +31,7 @@ const PhoneArea = () => {
           </S.Context>
         </S.PhoneWrap>
       </S.MainWrap>
-      <S.Introduce>
+      <S.Introduce isMoblie={!checkWidth()}>
         시약병에 있는 CAS No. 를 폰으로 바로 찍어
         <br />
         화학물질정보를 편하게 검색 하세요

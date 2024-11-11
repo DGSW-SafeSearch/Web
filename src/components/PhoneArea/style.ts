@@ -10,26 +10,36 @@ export const Context = styled.p<{ isRight?: boolean }>`
   ${({ isRight }) => isRight && `text-align:right;`}
 `;
 
-export const PhoneWrap = styled.div`
+export const PhoneWrap = styled.div<{ isMoblie: boolean }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   margin-top: 3rem;
   flex-direction: column;
-  height: 1000px;
+
+  height: ${({ isMoblie }) => (isMoblie ? "870px" : "1000px")};
   width: 400px;
 `;
 
-export const MainWrap = styled.div`
+export const MainWrap = styled.div<{ isMoblie: boolean }>`
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: ${({ isMoblie }) => (isMoblie ? "center" : "space-around")};
+  ${({ isMoblie }) =>
+    isMoblie &&
+    `
+  flex-direction : column;
+  
+  &>div:nth-child(1){
+    margin-bottom : 200px;
+  }
+  `}
   align-items: center;
 `;
 
-export const Introduce = styled.p`
-  font-size: 2rem;
+export const Introduce = styled.p<{ isMoblie: boolean }>`
+  font-size: ${({ isMoblie }) => (isMoblie ? "1.5rem" : "2rem")};
   font-weight: 600;
   color: ${({ theme }) => theme.personal50};
   text-align: center;
