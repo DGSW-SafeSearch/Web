@@ -19,7 +19,7 @@ export const PhoneWrap = styled.div<{ isMoblie: boolean }>`
   flex-direction: column;
 
   height: ${({ isMoblie }) => (isMoblie ? "870px" : "1000px")};
-  width: 400px;
+  width: ${({ isMoblie }) => (isMoblie ? "300px" : "400px")};
 `;
 
 export const MainWrap = styled.div<{ isMoblie: boolean }>`

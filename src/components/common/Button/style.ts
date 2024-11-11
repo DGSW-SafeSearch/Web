@@ -4,7 +4,7 @@ export const MainForm = styled.div<{ isMoblie: boolean }>`
   cursor: pointer;
   padding: 0.75rem;
   border-radius: 1rem;
-  font-size: ${({ isMoblie }) => (isMoblie ? "1.5rem" : "1.75rem")};
+  font-size: ${({ isMoblie }) => (isMoblie ? "1rem" : "1.75rem")};
   display: inline-block;
   background-color: ${({ theme }) => theme.black};
   color: ${({ theme }) => theme.white0};
@@ -21,8 +21,8 @@ export const ButtonImg = styled.div<{ isMoblie: boolean; image: string }>`
   ${({ isMoblie }) =>
     isMoblie
       ? `
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     `
       : `
     width: 2.5rem;
