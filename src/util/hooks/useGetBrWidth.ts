@@ -14,10 +14,9 @@ const useGetBrWidth = () => {
     };
   }, []);
 
-  const checkWidth = (isSameIdx: boolean): boolean => {
+  const checkWidth = (): boolean => {
     if (browserWidth > 500) return true;
     else {
-      if (isSameIdx) return true;
       return false;
     }
   };
