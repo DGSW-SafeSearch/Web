@@ -2,6 +2,10 @@
 
 SafeSearch-Web 앱 배포용
 
+# 배포된 웹 바로가기
+
+`https://safesearch.netlify.app/`
+
 ## 사용한 기술 스택
 
 - React / TypeScripts
