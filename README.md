@@ -4,8 +4,9 @@ SafeSearch-Web 앱 배포용
 
 # 배포된 웹 바로가기
 
-`https://safesearch.netlify.app/` <br/>
-<a href="https://safesearch.netlify.app/">바로가기</a>
+`https://safesearch.netlify.app/` 
+`http://safesearch.kr/`<br/>
+<a href="http://safesearch.kr/">바로가기</a>
 ## 사용한 기술 스택
 
 - React / TypeScripts
